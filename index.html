@@ -1,81 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>InfiniteCamp</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="menu-icon">&#9776;</div>
-      <div class="logo">Infinite Campus</div>
-      <div class="icons">
-        <div class="profile">👤</div>
-      </div>
-    </header>
 
-    <div class="container">
-      <aside class="sidebar">
-        <ul>
-          <li class="active" onclick="location.href='/'">
-            <i class="fas fa-home"></i> Home
-          </li>
-          <li onclick="location.href='/null'">
-            <i class="fas fa-globe"></i> Null's Network
-          </li>
-          <li onclick="location.href='/games'">
-            <i class="fas fa-gamepad"></i> Games
-          </li>
-          <li onclick="location.href='/settings'">
-            <i class="fas fa-cogs"></i> Settings
-          </li>
-        </ul>
-      </aside>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InfiniteCamp</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="/global.js" defer></script>
+</head>
 
-      <main class="main">
-        <h1>Home</h1>
-
-        <section class="student-cards">
-          <div class="student-card animate">
-            <div class="info">
-              <h2>Welcome to Webbite3</h2>
-              <p><strong>50+</strong> Games</p>
-            </div>
-          </div>
-
-          <div class="student-card animate delay">
-            <div class="info">
-              <h2>Changelog</h2>
-              <p><strong>3.0</strong> Released Webbite3</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="side-widgets">
-          <div class="widget animate">
-            <h3>Announcements</h3>
-            <p>No announcements.</p>
-          </div>
-
-          <div class="widget animate delay">
-            <h3>Inbox</h3>
-            <p>No new messages...</p>
-          </div>
-
-          <div class="widget animate">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="https://discord.gg/RJdX6WzFtP">Discord</a></li>
-              <li>
-                <a href="https://github.com/PlanckNetwork/"
-                  >Github Organization</a
-                >
-              </li>
-            </ul>
-          </div>
-        </section>
-      </main>
+<body>
+  <header class="topbar">
+    <div id="menu-button" class="menu-icon">&#9776;</div>
+    <div class="logo">WB3 - Beta</div>
+    <div class="icons">
+      <div class="profile">👤</div>
     </div>
-  </body>
+  </header>
+
+  <div class="container">
+    <aside id="sidebar" class="sidebar">
+      <ul>
+        <li class="active" onclick="location.href='/'">
+          <i class="fas fa-home"></i> Home
+        </li>
+        <li onclick="location.href='/null'">
+          <i class="fas fa-globe"></i> Null's Network
+        </li>
+        <li onclick="location.href='/games'">
+          <i class="fas fa-gamepad"></i> Games
+        </li>
+        <li onclick="location.href='/settings'">
+          <i class="fas fa-cogs"></i> Settings
+        </li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h1>Home</h1>
+
+      <section class="student-cards">
+        <div class="student-card animate">
+          <div class="info">
+            <h2>Welcome to Webbite3</h2>
+            <p><strong>50+</strong> Games</p>
+          </div>
+        </div>
+
+        <div class="student-card animate delay">
+          <div class="info">
+            <h2>Changelog</h2>
+            <p><strong>3.0</strong> Released Webbite3</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-widgets">
+        <div class="widget animate">
+          <h3>Announcements</h3>
+          <p>No announcements.</p>
+        </div>
+
+        <div class="widget animate delay">
+          <h3>Inbox</h3>
+          <p>No new messages...</p>
+        </div>
+
+        <div class="widget animate">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="https://discord.gg/RJdX6WzFtP">Discord</a></li>
+            <li>
+              <a href="https://github.com/PlanckNetwork/">Github Organization</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="widget animate delay">
+          <h3>How to Access Other Tabs</h3>
+          <p>Hit the three lines on the top left to access nav bar</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
 </html>

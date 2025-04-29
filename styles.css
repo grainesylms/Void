@@ -65,12 +65,38 @@ body {
   display: flex;
 }
 
+
 .sidebar {
-  background: #1a1a1a;
-  color: #ccc;
+  position: fixed;
+  top: 60px;
+  left: 0;
   width: 220px;
-  min-height: 100vh;
-  padding-top: 30px;
+  background: #1a1a1a;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: 20;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease, box-shadow 0.3s;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
+  scrollbar-color: #333 #1a1a1a;
+}
+
+.sidebar-show {
+  transform: translateX(0);
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
 }
 
 .sidebar ul {
@@ -207,6 +233,7 @@ body {
     flex-direction: column;
   }
 }
+
 .li {
   cursor: pointer;
 }
@@ -220,6 +247,7 @@ body {
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
 }
+
 .play-button:hover {
   background: #6b6b6b;
   transform: scale(1.05);
