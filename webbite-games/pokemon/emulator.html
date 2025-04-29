@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+        #game {
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="game"></div>
+    
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                core: params.get('c') || 'gba', 
+                romPath: params.get('rom') || 'pokemon/GBA_ROMS/game.zip' 
+            };
+        }
+
+        const { core, romPath } = getQueryParams();
+
+        EJS_player = "#game";
+        EJS_core = core;
+        EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+        EJS_gameUrl = `https://uec.speedslicer.dev/${romPath}`;
+
+        </script>
+        <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+</html>
