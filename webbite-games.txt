@@ -1,0 +1,13 @@
+./2048-CUPCAKES
+./appel
+./blockblast
+./consolepong
+./cookieclicker
+./idle-breakout
+./pokemon
+./retrobowl
+./shapez
+./slope
+./solitare
+./spider
+./watermelon

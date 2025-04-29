@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VSreen</title>
+    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script src="script.js?v=6"></script>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>InfiniteCamp</title>
+        <link rel="stylesheet" href="/styles.css" />
+      </head>
+      <body>
+        <header class="topbar">
+          <div class="menu-icon">&#9776;</div>
+          <div class="logo">Infinite Campus</div>
+          <div class="icons">
+            <div class="profile">👤</div>
+          </div>
+        </header>
+
+        <div class="container">
+          <aside class="sidebar">
+            <ul>
+              <li onclick="location.href='/'">
+                <i class="fas fa-home"></i> Home
+              </li>
+              <li class="active" onclick="location.href='/null'">
+                <i class="fas fa-globe"></i> Null's Network
+              </li>
+              <li onclick="location.href='/games'">
+                <i class="fas fa-gamepad"></i> Games
+              </li>
+              <li onclick="location.href='/settings'">
+                <i class="fas fa-cogs"></i> Settings
+              </li>
+            </ul>
+          </aside>
+
+          <main class="main">
+            <div class="background" id="background"></div>
+
+            <div class="launcher">
+              <div class="content">
+                <h1 id="home-page-text">Welcome to Minecraft</h1>
+                <div class="dropdown">
+                  <label for="version-home">Select Version:</label>
+                  <select id="version-home">
+                    <option value="1.12WASM">EaglercraftX 1.12 WASM</option>
+                    <option value="1.8.8">EaglercraftX 1.8</option>
+                    <option value="wasm">EaglercraftX 1.8 WASM</option>
+
+                    <option value="1.12JS">EaglercraftX 1.12 JS (SLOW)</option>
+                    <option value="1.5.2">Eaglercraft 1.5.2</option>
+                    <option value="b1.7.3">Beta 1.7.3</option>
+                    <option value="b1.3">Beta 1.3</option>
+                    <option value="0.3">0.3 Survival Test</option>
+                    <option value="infdev">Infdev</option>
+                    <option value="indev">Indev</option>
+                    <option value="classic">Classic</option>
+                  </select>
+                </div>
+                <button id="play-button" onclick="launchGame()">Play</button>
+              </div>
+            </div>
+          </main>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/your/background.gif') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+.launcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+  background-color: rgba(43, 43, 79, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#home-page-text {
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  margin-bottom: 20px;
+}
+
+#version-home {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
+
+#play-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4b4b7f;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#play-button:hover {
+  background-color: #6b6b9f;
+}
