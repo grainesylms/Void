@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VSreen</title>
+  <title>InfiniteCamp</title>
   <link rel="stylesheet" href="styles.css?v=6" />
   <link rel="stylesheet" href="/styles.css" />
   <script src="script.js?v=6"></script>
@@ -25,19 +25,30 @@
     <header class="topbar">
       <div id="menu-button" class="menu-icon">&#9776;</div>
       <div class="logo">WB3 - Beta</div>
-      <div class="icons">
-        <div class="profile">👤</div>
-      </div>
+      <nav class="nav-links">
+
+        <a href="/minecraft">Vanilla 
+          
+        </a>
+        <a href="/minecraft/custom">Custom Clients</a>
+
+        <a href="/minecraft/servers">Servers</a>
+
+        <a href="/minecraft/mods">Mods</a>
+        <a href="/minecraft/credits">About</a>
+      </nav>
     </header>
-  
+
+
+
     <div class="container">
       <aside id="sidebar" class="sidebar">
         <ul>
           <li onclick="location.href='/'">
             <i class="fas fa-home"></i> Home
           </li>
-          <li class="active" onclick="location.href='/null'">
-            <i class="fas fa-globe"></i> Null's Network
+          <li class="active" onclick="location.href='/minecraft'">
+            <i class="fas fa-globe"></i> Minecraft
           </li>
           <li onclick="location.href='/games'">
             <i class="fas fa-gamepad"></i> Games
@@ -53,7 +64,7 @@
 
         <div class="launcher">
           <div class="content">
-            <h1 id="home-page-text">Welcome to Minecraft</h1>
+            <h1 id="home-page-text">Minecraft</h1>
             <div class="dropdown">
               <label for="version-home">Select Version:</label>
               <select id="version-home">
@@ -76,10 +87,8 @@
         </div>
       </main>
     </div>
+
   </body>
+  <script src="/global.js" defer></script>
 
   </html>
-</body>
-<script src="/global.js" defer></script>
-
-</html>

@@ -252,3 +252,55 @@ body {
   background: #6b6b6b;
   transform: scale(1.05);
 }
+
+
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  color: #e0e0e0;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #81c784;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}

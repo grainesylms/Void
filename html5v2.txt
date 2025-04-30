@@ -12,7 +12,6 @@
 ./fake-virus
 ./unfold-2
 ./om-bounce
-./minecraft-classic
 ./bad-ice-cream-2
 ./jetpack
 ./miniputt
@@ -64,7 +63,6 @@
 ./madalin-stunt-cars-3
 ./run-3
 ./cannon-basketball-4
-./minecraftbeta
 ./justfall
 ./fireboywatergirlforesttemple
 ./sm63
@@ -342,7 +340,6 @@
 ./rise-of-neon-square
 ./snowbattle
 ./idle-breakout
-./minecraft
 ./temple-run-2
 ./1
 ./basket-bros-io
