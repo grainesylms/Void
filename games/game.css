@@ -1,4 +1,4 @@
-#play-button {
+.play-button {
     background-color: #4a148c;
     color: white;
     padding: 12px 24px;
@@ -10,14 +10,14 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease, transform 0.2s ease;
     user-select: none;
-  }
-  
-  #play-button:hover {
+}
+
+.play-button:hover {
     background-color: #6a1b9a;
     transform: scale(1.05);
-  }
-  
-  #play-button:active {
+}
+
+.play-button:active {
     background-color: #38006b;
     transform: scale(0.95);
-  }
+}
