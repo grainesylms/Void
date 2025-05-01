@@ -6,44 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>InfiniteCamp</title>
   <link rel="stylesheet" href="/styles.css" />
-
+  <link rel="stylesheet" href="game.css" />
+  
   <script src="/gameloader.js" defer></script>
 </head>
 
 <body>
-  <header class="topbar">
-    <div id="menu-button" class="menu-icon">&#9776;</div>
-    <div class="logo">WB3 - Beta</div>
-    <div class="icons">
-      <div class="profile">👤</div>
-    </div>
-  </header>
-
   <div class="container">
-    <aside id="sidebar" class="sidebar">
-      <ul>
-        <li onclick="location.href='/'">
-          <i class="fas fa-home"></i> Home
-        </li>
-        <li onclick="location.href='/minecraft'">
-          <i class="fas fa-globe"></i> Minecraft
-        </li>
-        <li class="active" onclick="location.href='/games'">
-          <i class="fas fa-gamepad"></i> Games
-        </li>
-        <li onclick="location.href='/exploits'">
-          <i class="fas fa-radiation"></i> Exploits
-        </li>
-        <li onclick="location.href='/settings'">
-          <i class="fas fa-cogs"></i> Settings
-        </li>
-      </ul>
-    </aside>
-
-
     <main class="main">
       <h1>Games</h1>
-      <section class="side-widgets" id="games-section"></section>
+      <section class="side-widgets scrollable" id="games-section"></section>
     </main>
   </div>
 </body>
