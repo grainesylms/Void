@@ -1,0 +1,42 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  color: #e0e0e0;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  background-color: rgba(30, 30, 50, 0.85);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(150, 0, 200, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+#home-page-text {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #f3e5f5;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
