@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>InfiniteCamp</title>
-  <link rel="stylesheet" href="./styles.css" />
-  
-  <script src="/gameloader.js" defer></script>
-</head>
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="game.css" />
+
+  <!-- Scripts -->
+  <script src="/gameloader.js" defer></script>
+  <script src="/global.js" defer></script>
+</head>
 <body>
   <div class="container">
     <main class="main">
+      <!-- Search Bar -->
+      <div class="search-bar-container" style="padding: 1rem; text-align: center;">
+        <input
+          type="text"
+          id="gameSearch"
+          placeholder="Search games..."
+          style="width: 80%; max-width: 600px; padding: 0.5rem 1rem; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc;"
+        />
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResultsMessage" style="display: none; text-align: center; color: red; font-weight: bold;">
+        No results found.
+      </div>
+
+      <!-- Game Buttons -->
       <section class="side-widgets scrollable" id="games-section"></section>
     </main>
   </div>
 </body>
-<script src="/global.js" defer></script>
-<link rel="stylesheet" href="game.css" />
-
 </html>

@@ -174,3 +174,23 @@ window.onload = function () {
   
   activateTab(document.querySelector('.tab'));
 };
+
+function toggleMainFullscreen() {
+  const main = document.querySelector('.main');
+  if (!document.fullscreenElement) {
+    main.requestFullscreen().catch(err => {
+      alert(`Error attempting fullscreen: ${err.message}`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+document.addEventListener('fullscreenchange', () => {
+  const btn = document.querySelector('.fullscreen-toggle');
+  if (document.fullscreenElement) {
+    btn.textContent = '🡼'; 
+  } else {
+    btn.textContent = '⛶'; 
+  }
+});

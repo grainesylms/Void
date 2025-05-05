@@ -365,3 +365,28 @@ body {
   max-height: calc(100vh - 42px);
   padding-right: 10px;
 }
+
+.game-search-bar {
+  margin: 20px auto 30px auto;
+  padding: 12px 20px;
+  width: 60%;
+  max-width: 600px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background: rgba(40, 40, 40, 0.7);
+  color: #e0e0e0;
+  box-shadow: 0 0 10px rgba(156, 39, 176, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.game-search-bar::placeholder {
+  color: #bbb;
+}
+
+.game-search-bar:focus {
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  background: rgba(50, 50, 50, 0.8);
+}
