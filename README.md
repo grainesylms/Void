@@ -27,5 +27,3 @@
 
 
 ## 📜 License
-
-MIT License
