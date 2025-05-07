@@ -15,6 +15,45 @@ body {
   position: relative;
 }
 
+@keyframes pulseBackground {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.4); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spinGlow {
+  0% {
+    box-shadow: 0 0 5px #9c27b0, 0 0 10px #7b1fa2, 0 0 15px #6a1b9a;
+    transform: rotate(0deg);
+  }
+  100% {
+    box-shadow: 0 0 5px #9c27b0, 0 0 15px #7b1fa2, 0 0 30px #6a1b9a;
+    transform: rotate(360deg);
+  }
+}
+
 .void-background {
   position: fixed;
   top: 0;
@@ -24,18 +63,6 @@ body {
   background: linear-gradient(to bottom right, #000000, #5e2e91);
   z-index: -1;
   animation: pulseBackground 8s ease-in-out infinite alternate;
-}
-
-@keyframes pulseBackground {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.95;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .sidebar {
@@ -81,10 +108,13 @@ body {
 .sidebar i {
   font-size: 24px;
   color: #e0e0e0;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .sidebar li:hover i {
   color: #9c27b0;
+  transform: scale(1.2) rotate(5deg);
+  animation: sparkle 1s ease infinite;
 }
 
 .sidebar li .tooltip {
@@ -127,6 +157,7 @@ body {
   width: calc(100% - 70px);
   z-index: 20;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  animation: fadeInRight 1s ease-out;
 }
 
 .tabs::-webkit-scrollbar {
@@ -258,6 +289,7 @@ body {
   opacity: 0;
   transform: translateY(30px);
   backdrop-filter: blur(5px);
+  animation: fadeInUp 1s ease forwards, float 6s ease-in-out infinite;
 }
 
 .student-card:hover {
@@ -293,6 +325,7 @@ body {
   opacity: 0;
   transform: translateY(30px);
   backdrop-filter: blur(5px);
+  animation: fadeInUp 1.2s ease forwards, float 8s ease-in-out infinite;
 }
 
 .widget:hover {
@@ -329,13 +362,6 @@ body {
 
 .animate.delay {
   animation-delay: 0.3s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 768px) {
