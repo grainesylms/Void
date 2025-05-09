@@ -6,26 +6,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>InfiniteCamp</title>
 
-  <!-- Font Awesome (in case you use icons later) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Favicon -->
+  <link id="dynamic-favicon" rel="icon" type="image/png" href="/favicon.ico" />
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="./settings.css" />
+
+  <style>
+    .cloaking-container {
+      margin-top: 2em;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .cloaking-container h2 {
+      margin-bottom: 0.5em;
+    }
+
+    .cloaking-input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 12px;
+      border: none;
+      margin-bottom: 0.8em;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      box-shadow: 0 0 10px rgba(140, 100, 240, 0.3);
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .cloaking-input::placeholder {
+      color: #ccc;
+    }
+
+    .cloaking-input:focus {
+      box-shadow: 0 0 15px rgba(140, 100, 240, 0.6);
+    }
+
+    .cloaking-button {
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #8e44ad, #3498db);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(140, 100, 240, 0.5);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .cloaking-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(140, 100, 240, 0.8);
+    }
+
+    .cloaking-button:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Background animation layer -->
   <div class="background"></div>
 
-  <!-- Centered content area -->
   <div class="container">
     <main class="main">
       <div class="content">
         <h1 id="home-page-text">Settings</h1>
         <p>Coming Soon!</p>
+
+        <!-- Tab Cloaking UI -->
+        <div class="cloaking-container">
+          <h2>Tab Cloaking</h2>
+          <input type="text" id="tabTitle" class="cloaking-input" placeholder="Enter tab title" />
+          <input type="text" id="tabFavicon" class="cloaking-input" placeholder="Enter favicon URL (optional)" />
+          <button class="cloaking-button" onclick="applyTabCloak()">Apply</button>
+        </div>
       </div>
     </main>
   </div>
+
+  <script>
+function applyTabCloak() {
+  const title = document.getElementById('tabTitle').value.trim();
+  const faviconUrl = document.getElementById('tabFavicon').value.trim();
+
+  try {
+    const parentDoc = window.parent.document;
+
+    if (title) {
+      parentDoc.title = title;
+    }
+
+    if (faviconUrl) {
+      let oldFavicon = parentDoc.getElementById('dynamic-favicon');
+      if (oldFavicon) oldFavicon.remove();
+
+      const newFavicon = parentDoc.createElement('link');
+      newFavicon.id = 'dynamic-favicon';
+      newFavicon.rel = 'icon';
+      newFavicon.type = 'image/png';
+      newFavicon.href = faviconUrl + '?v=' + new Date().getTime();
+      parentDoc.head.appendChild(newFavicon);
+    }
+  } catch (err) {
+    alert("Tab cloaking is blocked (likely due to cross-origin iframe).");
+    console.error("Cloaking failed:", err);
+  }
+}
+
+  </script>
 
   <script src="/global.js" defer></script>
 </body>
