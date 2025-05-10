@@ -112,7 +112,6 @@ body {
   transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 
-/* Gradient color on hover and active */
 .sidebar li:hover i {
   background: linear-gradient(135deg, #8e44ad, #3498db);
   -webkit-background-clip: text;

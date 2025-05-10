@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/PlanckNetwork/Void/main/logo.png" alt="Void Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/PlanckNetwork/Void/main/actuallogo.png" alt="Void Logo" width="200"/>
 </p>
 
 <h1 align="center">Void</h1>
