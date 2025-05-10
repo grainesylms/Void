@@ -105,6 +105,21 @@ body {
   border-left: 3px solid #9c27b0;
 }
 
+/* Default icon style */
+.sidebar i {
+  font-size: 24px;
+  color: #e0e0e0;
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+/* Gradient color on hover and active */
+.sidebar li:hover i {
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .sidebar i {
   font-size: 24px;
   color: #e0e0e0;
@@ -112,7 +127,6 @@ body {
 }
 
 .sidebar li:hover i {
-  color: #9c27b0;
   transform: scale(1.2) rotate(5deg);
   animation: sparkle 1s ease infinite;
 }
