@@ -1,10 +1,10 @@
 
 const pageURLs = {
-  home: '/home/',
-  minecraft: '/minecraft/',
-  games: '/games/',
-  exploits: '/exploits/',
-  settings: '/settings/'
+  home: '/content/home/',
+  minecraft: '/content/minecraft/',
+  games: '/content/games/',
+  exploits: '/content/exploits/',
+  settings: '/content/settings/'
 };
 
 let tabCounter = 1;
@@ -215,3 +215,102 @@ document.addEventListener('fullscreenchange', () => {
     if (iframe) iframe.removeAttribute('style');
   }
 });
+
+    function applyTabCloak() {
+    const title = document.getElementById('tabTitle').value.trim();
+    const faviconUrl = document.getElementById('tabFavicon').value.trim();
+
+    try {
+      const parentDoc = window.parent.document;
+
+      if (title) {
+        parentDoc.title = title;
+        localStorage.setItem('tabCloakTitle', title);
+      }
+
+      if (faviconUrl) {
+        localStorage.setItem('tabCloakFavicon', faviconUrl);
+
+        let oldFavicon = parentDoc.getElementById('dynamic-favicon');
+        if (oldFavicon) oldFavicon.remove();
+
+        const newFavicon = parentDoc.createElement('link');
+        newFavicon.id = 'dynamic-favicon';
+        newFavicon.rel = 'icon';
+        newFavicon.type = 'image/png';
+        newFavicon.href = faviconUrl + '?v=' + new Date().getTime();
+        parentDoc.head.appendChild(newFavicon);
+      }
+    } catch (err) {
+      // Fallback: apply changes to the iframe's own document
+      if (title) {
+        document.title = title;
+      }
+
+      if (faviconUrl) {
+        let oldFavicon = document.getElementById('dynamic-favicon');
+        if (oldFavicon) oldFavicon.remove();
+
+        const newFavicon = document.createElement('link');
+        newFavicon.id = 'dynamic-favicon';
+        newFavicon.rel = 'icon';
+        newFavicon.type = 'image/png';
+        newFavicon.href = faviconUrl + '?v=' + new Date().getTime();
+        document.head.appendChild(newFavicon);
+      }
+
+      console.warn("Parent tab cloaking blocked. Applied changes in iframe only.");
+    }
+  }
+
+  function resetTabCloak() {
+    try {
+      const parentDoc = window.parent.document;
+
+      parentDoc.title = "void";
+      document.getElementById('tabTitle').value = '';
+      localStorage.removeItem('tabCloakTitle');
+
+      const oldFavicon = parentDoc.getElementById('dynamic-favicon');
+      if (oldFavicon) oldFavicon.remove();
+
+      const defaultFavicon = parentDoc.createElement('link');
+      defaultFavicon.id = 'dynamic-favicon';
+      defaultFavicon.rel = 'icon';
+      defaultFavicon.type = 'image/png';
+      defaultFavicon.href = '/favicon.ico';
+      parentDoc.head.appendChild(defaultFavicon);
+
+      document.getElementById('tabFavicon').value = '';
+      localStorage.removeItem('tabCloakFavicon');
+    } catch (err) {
+      // Fallback: reset within the iframe
+      document.title = "void";
+      document.getElementById('tabTitle').value = '';
+      document.getElementById('tabFavicon').value = '';
+      localStorage.removeItem('tabCloakTitle');
+      localStorage.removeItem('tabCloakFavicon');
+
+      const oldFavicon = document.getElementById('dynamic-favicon');
+      if (oldFavicon) oldFavicon.remove();
+
+      const defaultFavicon = document.createElement('link');
+      defaultFavicon.id = 'dynamic-favicon';
+      defaultFavicon.rel = 'icon';
+      defaultFavicon.type = 'image/png';
+      defaultFavicon.href = '/favicon.ico';
+      document.head.appendChild(defaultFavicon);
+
+      console.warn("Resetting parent tab cloaking blocked. Reset in iframe only.");
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTitle = localStorage.getItem('tabCloakTitle');
+    const savedFavicon = localStorage.getItem('tabCloakFavicon');
+
+    if (savedTitle) document.getElementById('tabTitle').value = savedTitle;
+    if (savedFavicon) document.getElementById('tabFavicon').value = savedFavicon;
+
+    applyTabCloak();
+  });

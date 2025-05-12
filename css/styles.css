@@ -78,6 +78,7 @@ body {
   align-items: center;
   padding-top: 70px;
   z-index: 10;
+  justify-content: space-between;
 }
 
 .sidebar ul {
@@ -146,6 +147,17 @@ body {
 .sidebar li:hover .tooltip {
   opacity: 1;
   visibility: visible;
+}
+
+.nav-list,
+.bottom-list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.bottom-list {
+  margin-bottom: 20px;
 }
 
 .content-wrapper {

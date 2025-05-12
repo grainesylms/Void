@@ -1,5 +1,5 @@
   const popup = document.getElementById('announcementPopup');
-  const allowedDomains = ['laughing-fortnight-7v945xrwr9gqcpw59-5501.app.github.dev'];
+  const allowedDomains = ['congenial-doodle-pjp5q9vrgvjhrvvq-5500.app.github.dev'];
 
   const currentDomain = window.location.hostname;
   const hasSeenPopup = localStorage.getItem('void_announcement_seen');
