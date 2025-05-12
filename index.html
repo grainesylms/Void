@@ -7,13 +7,27 @@
   <meta name="description" content="Your all in one web gaming solution. Fully equipped with 50+ games, multiple eaglercraft clients, and exploits.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="announcement.css" />
   <link rel="icon" type="image/png" href="logo.png">
+
 </head>
 
 <body>
 
   <div class="void-background"></div>
-  
+
+  <div class="popup-announcement" id="announcementPopup">
+    <span class="close-btn" onclick="document.getElementById('announcementPopup').style.display='none'">×</span>
+    <h1>void.</h1>
+    <p>
+      The two biggest game providers of the school have come together to produce <strong>void.</strong> (Webbite + HTML).<br><br>
+      This partnership brings the best quality and most likely to be updated gamesite that has been presented.<br><br>
+      We thank you for your patience on this project, and enjoy!<br><br>
+      (This project is still in development if there is glitches please report them.)
+    </p>
+    <button class="explore-btn" onclick="closeAnnouncement()">Explore</button>
+  </div>
+
   <aside class="sidebar">
     <ul>
       <li class="active">
@@ -59,7 +73,7 @@
       </main>
     </div>
   </div>
-
   <script src="script.js"></script>
+  <script src="announcement.js"></script>
 </body>
 </html>
