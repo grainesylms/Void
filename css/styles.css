@@ -183,6 +183,7 @@ body {
   z-index: 20;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   animation: fadeInRight 1s ease-out;
+  overflow: hidden;
 }
 
 .tabs::-webkit-scrollbar {

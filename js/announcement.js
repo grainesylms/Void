@@ -1,5 +1,5 @@
   const popup = document.getElementById('announcementPopup');
-  const allowedDomains = ['congenial-doodle-pjp5q9vrgvjhrvvq-5500.app.github.dev'];
+  const allowedDomains = ['congenial-doodle-pjp5q9vrgvjhrvvq-5500.app.github.dev', 'wasd.infintecampus.info', 'html.infintecampus.info'];
 
   const currentDomain = window.location.hostname;
   const hasSeenPopup = localStorage.getItem('void_announcement_seen');
