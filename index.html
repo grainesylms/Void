@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="stylesheet" href="/css/announcement.css" />
+  <link rel="stylesheet" href="/css/background-fix.css" />
   <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 
 <body>
-
   <div class="void-background"></div>
 
   <div class="popup-announcement" id="announcementPopup">
@@ -29,23 +29,21 @@
 
   <aside class="sidebar">
     <ul class="nav-list">
-      <li class="active">
+      <li class="active" data-page="home">
         <i class="fas fa-home"></i>
         <span class="tooltip">Home</span>
       </li>
-      <li>
+      <li data-page="minecraft">
         <i class="fas fa-cube"></i>
         <span class="tooltip">Minecraft</span>
       </li>
-      <li>
+      <li data-page="games">
         <i class="fas fa-gamepad"></i>
         <span class="tooltip">Games</span>
       </li>
-      <!-- Removed Exploits tab -->
     </ul>
-
     <ul class="bottom-list">
-      <li>
+      <li data-page="settings">
         <i class="fas fa-cog"></i>
         <span class="tooltip">Settings</span>
       </li>
@@ -53,14 +51,12 @@
   </aside>
 
   <div class="content-wrapper">
-    <!-- Tab Bar -->
     <div class="tabs">
       <div class="tab active" data-page="home">
         <i class="fas fa-home"></i>
         Home
         <span class="close-btn">×</span>
       </div>
-
       <div class="new-tab-btn">
         <i class="fas fa-plus"></i>
       </div>

@@ -14,81 +14,11 @@
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="./settings.css" />
-
-  <style>
-    .cloaking-container {
-      margin-top: 2em;
-      animation: fadeIn 1.2s ease-out forwards;
-    }
-
-    .cloaking-container h2 {
-      margin-bottom: 0.5em;
-    }
-
-    .cloaking-input {
-      width: 100%;
-      padding: 14px 20px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border-radius: 12px;
-      border: none;
-      margin-bottom: 0.8em;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      box-shadow: 0 0 10px rgba(140, 100, 240, 0.3);
-      outline: none;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .cloaking-input::placeholder {
-      color: #ccc;
-    }
-
-    .cloaking-input:focus {
-      box-shadow: 0 0 15px rgba(140, 100, 240, 0.6);
-    }
-
-    .cloaking-button {
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #8e44ad, #3498db);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(140, 100, 240, 0.5);
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      user-select: none;
-      margin-right: 10px;
-    }
-
-    .cloaking-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(140, 100, 240, 0.8);
-    }
-
-    .cloaking-button:active {
-      transform: scale(0.95);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/background-fix.css" />
 </head>
 
 <body>
-  <div class="background"></div>
+  <div class="void-background"></div>
 
   <div class="container">
     <main class="main">
