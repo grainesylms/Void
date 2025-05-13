@@ -30,5 +30,5 @@ function loadGames(txtPath, folderPath) {
     });
 }
 
-loadGames("/html5v2.txt", "/HTML-Games-V2");
-loadGames("/webbite-games.txt", "/webbite-games");
+loadGames("/html5v2.txt", "/HTML-Games-V2/");
+loadGames("/webbite-games.txt", "/webbite-games/");
