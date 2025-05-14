@@ -10,7 +10,12 @@ function changeTheme() {
 
 function launchGame() {
   const version = document.getElementById("version-home").value;
-  window.location.href = `versions/${version}`;
+  const newTab = window.open("about:blank", "_blank");
+  if (newTab) {
+    newTab.location.href = `versions/${version}`;
+  } else {
+    alert("Popup blocked. Please allow popups for this site.");
+  }
 }
 
 function setCookie(name, value, days) {
