@@ -30,5 +30,6 @@ function loadGames(txtPath, folderPath) {
     });
 }
 
+// Make sure the paths are absolute starting from the root
 loadGames("/html5v2.txt", "/HTML-Games-V2");
 loadGames("/webbite-games.txt", "/webbite-games");

@@ -1,9 +1,18 @@
+const BASE_URL = (() => {
+  const { origin, pathname } = window.location;
+  const pathParts = pathname.split('/').filter(Boolean);
+  const repoRoot = pathParts.length > 1 ? `/${pathParts[0]}/` : '/';  
+
+  return `${origin}${repoRoot}`;
+})();
+
 const pageURLs = {
-  home: '/content/home/',
-  minecraft: '/content/minecraft/',
-  games: '/content/games/',
-  settings: '/content/settings/'
+  home: `${BASE_URL}content/home/`,
+  minecraft: `${BASE_URL}content/minecraft/`,
+  games: `${BASE_URL}content/games/`,
+  settings: `${BASE_URL}content/settings/`
 };
+
 
 let tabCounter = 1;
 
