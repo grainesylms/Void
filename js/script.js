@@ -2,6 +2,7 @@ const pageURLs = {
   home: './content/home/',
   minecraft: './content/minecraft/',
   games: './content/games/',
+  exploits: './content/exploits/',
   settings: './content/settings/'
 };
 
