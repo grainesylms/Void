@@ -1,9 +1,9 @@
 const pageURLs = {
-  home: './content/home/',
-  minecraft: './content/minecraft/',
-  games: './content/games/',
-  exploits: './content/exploits/',
-  settings: './content/settings/'
+  home: './content/home/?v=2',
+  minecraft: './content/minecraft/?v=2',
+  games: './content/games/?v=2',
+  exploits: './content/exploits/?v=2',
+  settings: './content/settings/?v=2'
 };
 
 let tabCounter = 1;
