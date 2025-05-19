@@ -1,101 +1,347 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
 
 body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom right, #0f0f0f, #381f55);
-  color: #e0e0e0;
-  overflow: hidden;
-}
-
-.main {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, #000000, #5e2e91);
-  z-index: -1;
-  animation: pulseBackground 8s ease-in-out infinite alternate;
-}
-
-@keyframes pulseBackground {
-  0% { opacity: 1; }
-  50% { opacity: 0.95; }
-  100% { opacity: 1; }
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  overflow: hidden;
+  background-image: none;
+  background-size: cover;
 }
 
 .launcher {
+  width: 75vw;
+  height: 95vh;
+  margin: 15px auto 0 auto;
+  background-color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+.title-bar {
+  background-color: #2c2c2c;
+  padding: 10px;
+  text-align: center;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.username {
+  padding: 20px 10px;
+  border-bottom: 1px solid #333;
   text-align: center;
-  background-color: rgba(30, 30, 50, 0.85);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(150, 0, 200, 0.4);
-  backdrop-filter: blur(6px);
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
 }
 
-#home-page-text {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #f3e5f5;
+.nav-bar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #333;
 }
 
-.dropdown {
-  margin-bottom: 20px;
-}
-
-#version-home {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #29294b;
-  color: #ffffff;
-}
-
-#play-button {
-  padding: 14px 32px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #8e44ad, #3498db);
-  color: white;
-  border: none;
-  border-radius: 12px;
+.nav-bar li {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(140, 100, 240, 0.5);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: fadeIn 1.2s ease-out forwards;
+  transition: background-color 0.2s;
 }
 
-#play-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(140, 100, 240, 0.8);
+.nav-bar li:hover,
+.nav-bar li.selected {
+  background-color: #444;
 }
 
+.nav-bar li img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+}
+
+.nav-bar li span {
+  font-size: 14px;
+}
+
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+}
+
+.top-nav {
+  background-color: #2c2c2c;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.top-nav ul li {
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.top-nav ul li.selected {
+  color: #fff;
+  font-weight: bold;
+}
+
+.top-nav ul li:hover {
+  color: #fff;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #202020;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #333;
+  position: relative;
+  background-image: url('https://cdnjs.cloudflare.com/ajax/libs/wallpaper.js/3.1.0/wallpaper.min.js');
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 75%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.installations {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  box-sizing: border-box;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0 20px 20px; 
+  border-top: none;
+}
+
+
+.play-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.play-button {
+  font-family: 'Minecraftia-Regular', monospace;
+  background-color: #0cc70c;
+  border: 2px solid #095909;
+  padding: 15px 50px;
+  border-radius: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000;
+  letter-spacing: 1px;
+  box-shadow: inset -2px -4px #0000004d, inset 2px 2px #ffffff66;
+  transition: all 0.1s;
+  position: relative;
+  width: 300px;
+  text-align: center;
+}
+
+.play-button:hover {
+  background-color: #10e610;
+  transform: translateY(-2px);
+}
+
+.play-button:active {
+  background-color: #0aa10a;
+  box-shadow: inset 2px 2px #0000004d, inset -2px -2px #ffffff33;
+  transform: translateY(2px);
+}
+
+.play-button:disabled {
+  background-color: #555;
+  border-color: #444;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+
+.gift-banner {
+  position: absolute;
+  top: -70px;
+  right: 60px;
+  background-color: #0cc70c;
+  color: white;
+  font-family: 'Minecraftia-Regular', monospace;
+  padding: 10px 15px;
+  font-size: 12px;
+  border: 2px solid #095909;
+  box-shadow: inset -2px -4px #0000004d, inset 2px 2px #ffffff66;
+  text-shadow: 1px 1px #000;
+  z-index: 10;
+}
+
+.gift-button {
+  position: absolute;
+  top: -70px;
+  right: 0;
+  background-color: #666;
+  color: white;
+  padding: 10px 15px;
+  font-size: 12px;
+  border: 2px solid #444;
+  box-shadow: inset -2px -4px #0000004d, inset 2px 2px #ffffff66;
+  text-shadow: 1px 1px #000;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.installations > div {
+  position: left;
+  width: 260px;
+  user-select: none;
+  z-index: 200;
+}
+
+.installations .selector {
+  display: inline-block;
+  font-family: 'Minecraftia-Regular', monospace;
+  padding: 8px 12px;
+  border: 2px solid #444;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  width: 260px;
+  text-align: center;
+  box-shadow: inset -2px -4px #0000004d, inset 2px 2px #ffffff33;
+  transition: all 0.1s;
+  user-select: none;
+}
+
+.installations .selector:hover {
+  background-color: #444;
+  border-color: #555;
+}
+
+.installations .options {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  border: 2px solid #444;
+  background-color: #222;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #333;
+  z-index: 100;
+  border-radius: 6px;
+}
+
+.installations .options .option {
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #333;
+  transition: background-color 0.2s;
+}
+
+.installations .options .option:first-child {
+  border-top: none;
+}
+
+.installations .options .option:hover {
+  background-color: #444;
+}
+
+.installations .options .option img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.bottom-bar {
+  background-color: #2c2c2c;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ddd;
+  font-size: 14px;
+  text-decoration: none;
+  border-top: 1px solid #333;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-bar > span[onclick]:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -107,52 +353,20 @@ body {
   }
 }
 
-.main-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(18, 18, 18, 0.95);
-  padding: 12px 24px;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ba68c8;
-}
-
-.tabbar {
-  display: flex;
-  justify-content: center;
-  background: #1e1e2e;
-  padding: 10px 0;
-  box-shadow: inset 0 -1px 0 #3b3b3b;
-}
-
-.tab-link {
-  color: #ccc;
-  text-decoration: none;
-  padding: 8px 16px;
-  margin: 0 6px;
-  border-radius: 8px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.tab-link:hover {
-  background: #333;
-  color: #ba68c8;
-}
-
-.tab-link.active {
-  background: #3d3d4f;
-  color: #e1bee7;
-  font-weight: 600;
+body,
+.launcher,
+.title-bar,
+.content,
+.nav-bar li,
+.main-panel,
+.top-nav,
+.main-content,
+.cover-image,
+.installations,
+.play-button-container,
+.play-button,
+.gift-banner,
+.gift-button,
+.bottom-bar {
+  animation: fadeIn 0.5s ease forwards;
 }
