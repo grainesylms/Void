@@ -1,60 +1,46 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Version selector functionality
-  const versionButtons = document.querySelectorAll('.version-badge');
-  let activeVersion = '1.12 WASM'; // Default version
-  let activeVersionPath = './versions/1.12WASM'; // Default path
-  
-  versionButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Remove active class from all buttons
-      versionButtons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add active class to clicked button
-      this.classList.add('active');
-      
-      // Update active version and path
-      activeVersion = this.dataset.version;
-      activeVersionPath = this.dataset.path;
-    });
-  });
-  
-  // Launch button functionality
-  const launchButton = document.getElementById('launch-button');
-  
-  launchButton.addEventListener('click', function() {
-    // Create and show toast notification
-    showToast(`Launching Minecraft ${activeVersion}...`);
-    
-    // Navigate to the version-specific path
-    setTimeout(() => {
-      window.location.href = activeVersionPath;
-    }, 1000);
-    
-    console.log(`Launching Minecraft version: ${activeVersion} at path: ${activeVersionPath}`);
-  });
-  
-  // Toast notification function
-  function showToast(message) {
-    // Create toast element
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.textContent = message;
-    
-    // Append to body
-    document.body.appendChild(toast);
-    
-    // Show toast with animation
-    setTimeout(() => {
-      toast.classList.add('show');
-    }, 10);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => {
-        document.body.removeChild(toast);
-      }, 300);
-    }, 3000);
+
+function changeTheme() {
+  const selectedTheme = document.getElementById("theme-select").value;
+  document.querySelector(
+    ".background"
+  ).style.backgroundImage = `url(${themes[selectedTheme]})`;
+  setCookie("theme", selectedTheme, 365);
+}
+
+function launchGame() {
+  const version = document.getElementById("version-home").value;
+  const newTab = window.open("about:blank", "_blank");
+  if (newTab) {
+    newTab.location.href = `versions/${version}`;
+  } else {
+    alert("Popup blocked. Please allow popups for this site.");
   }
-});
+}
+
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+  const cname = name + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(cname) == 0) {
+      return c.substring(cname.length, c.length);
+    }
+  }
+  return "";
+}
+
+function updateColor(variable, color) {
+  document.documentElement.style.setProperty(variable, color);
+}
