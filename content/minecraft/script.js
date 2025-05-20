@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     showToast(`Launching Minecraft ${activeVersion}...`);
     
     setTimeout(() => {
+<<<<<<< HEAD
       window.open(activeVersionPath, '_blank'); // Open in new tab
+=======
+      window.open(activeVersionPath, '_blank'); 
+>>>>>>> 8a58677a71c250032aa7ff935fd6e0ee609beb88
     }, 100);
     
     console.log(`Launching Minecraft version: ${activeVersion} at path: ${activeVersionPath}`);
