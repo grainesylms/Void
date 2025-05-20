@@ -437,7 +437,7 @@ body {
   font-size: 1rem;
   border-radius: 30px;
   border: none;
-  background: rgba(30, 30, 30, 0.5); /* Lighter base */
+  background: rgba(30, 30, 30, 0.5); 
   color: #f3e5f5;
   box-shadow: 0 0 15px rgba(150, 0, 200, 0.25);
   transition: all 0.25s ease;

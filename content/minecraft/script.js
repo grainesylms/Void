@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   const versionButtons = document.querySelectorAll('.version-badge');
   let activeVersion = '1.12 WASM'; 
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showToast(`Launching Minecraft ${activeVersion}...`);
     
     setTimeout(() => {
-      window.location.href = activeVersionPath;
+      window.open(activeVersionPath, '_blank'); // Open in new tab
     }, 100);
     
     console.log(`Launching Minecraft version: ${activeVersion} at path: ${activeVersionPath}`);
