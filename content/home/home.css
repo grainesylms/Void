@@ -34,21 +34,22 @@
       animation: fadeIn 1s ease-out forwards;
     }
 
-    .explore-btn {
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #8e44ad, #3498db);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(140, 100, 240, 0.5);
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      animation: fadeIn 1.2s ease-out forwards;
-      text-decoration: none;
-    }
+.explore-btn {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(140, 100, 240, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out forwards;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
 
     .explore-btn:hover {
       transform: scale(1.05);
@@ -64,8 +65,9 @@
       font-size: 1.2rem;
       color: #ffffff;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 10px;
       line-height: 1.5;
+      animation: fadeIn 1.2s ease-out forwards;
     }
 
     @keyframes fadeIn {
@@ -78,3 +80,11 @@
         transform: translateY(0);
       }
     }
+
+
+.button-group {
+  align-items: center; 
+  gap: 20px;
+  margin-bottom: 8px;
+  animation: fadeIn 1s ease-out forwards;
+}
