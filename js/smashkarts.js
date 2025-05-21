@@ -1,6 +1,6 @@
 function openSmash() {
   
-  var url = "https://skunblocked.com";
+  var url = "https://schoolby.github.io/SmashKarts/";
 
   var win = window.open('about:blank', '_blank');
   
