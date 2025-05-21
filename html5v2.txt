@@ -229,7 +229,6 @@
 ./wolf3d
 ./flippy-fish
 ./backcountry
-./smashkarts
 ./elasticman
 ./stick-archers-battle
 ./friendlyfire
