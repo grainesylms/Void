@@ -4,7 +4,6 @@ const pageURLs = {
   games: './content/games/?v=2',
   exploits: './content/exploits/?v=2',
   settings: './content/settings/?v=2',
-  smashkarts: './content/smashkarts/?v=2',
 };
 
 let tabCounter = 1;
