@@ -1,6 +1,6 @@
 function openSmash() {
   
-  var url = "Smashkarts/";
+  var url = "content/smash-karts/";
 
   var win = window.open('about:blank', '_blank');
   
