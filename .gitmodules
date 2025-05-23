@@ -1,3 +1,6 @@
 [submodule "HTML-Games-V2"]
 	path = HTML-Games-V2
 	url = https://github.com/WBattist/HTML-Games-V2
+[submodule "smash-kart"]
+	path = smash-kart
+	url = https://github.com/ghp1tallteam/ghp1tallteam.github.io
