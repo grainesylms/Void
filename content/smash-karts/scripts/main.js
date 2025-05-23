@@ -8,14 +8,6 @@ function setV(val2)
     }
 }
 
-function getReferrerUrl()
-{
-  var url = (window.location != window.parent.location)
-    ? document.referrer
-    : document.location.href;
-    return url;
-}
-
 function isMobile()
 {
   var isMobile = RegExp(/Android|webOS|iPhone|iPod|iPad/i).test(navigator.userAgent);
@@ -118,23 +110,29 @@ window.copyText = function (text) {
 
 function firebaseLogEvent(eventName)
 {
-  if(firebase.analytics != null) firebase.analytics().logEvent(eventName);
+  if(enableFirebaseAnalytics && firebase.analytics != null)
+    firebase.analytics().logEvent(eventName);
 }
 
 function firebaseSetScreen(screenName)
 {
-  if(firebase.analytics != null) firebase.analytics().setCurrentScreen(screenName);  
-  if(firebase.analytics != null) firebase.analytics().logEvent("screen_view", { "screen_name": screenName})
+  if(enableFirebaseAnalytics && firebase.analytics != null)
+  {
+    firebase.analytics().setCurrentScreen(screenName);
+    firebase.analytics().logEvent("screen_view", { "screen_name": screenName})
+  }
 }
 
 function firebaseLogEventWithParam(eventName, p, v)
 {
-  if(firebase.analytics != null) firebase.analytics().logEvent(eventName, { [p]: v});
+  if(enableFirebaseAnalytics && firebase.analytics != null)
+    firebase.analytics().logEvent(eventName, { [p]: v});
 }
 
 function firebaseLogEventWithParamDict(eventName, paramsDict)
 {
-  if(firebase.analytics != null) firebase.analytics().logEvent(eventName, paramsDict);
+  if(enableFirebaseAnalytics && firebase.analytics != null)
+    firebase.analytics().logEvent(eventName, paramsDict);
 }
 
 var fs = false;
@@ -178,6 +176,25 @@ function isFullscreen()
     });
   }
 
+  function openPrivacyUrl()
+  {
+    onNextMouseUp(function () {
+      console.log("openPrivacyUrl onNextMouseUp");
+      if(isPlaywireEnabled())
+      {
+        window.open("https://smashkarts.io/privacy/privacyPW.html", "_blank");
+      }
+      else if(isAdinPlayEnabled())
+      {
+        window.open("https://smashkarts.io/privacy/privacyAdinplay.html", "_blank");
+      }
+      else
+      {
+        window.open("https://smashkarts.io/privacy/privacy.html", "_blank");
+      }
+    });
+  }
+
   function setElementFullScreen(el) {
 		onNextMouseUp(function () {
       var request = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
@@ -209,6 +226,43 @@ function isFullscreen()
     console.log("setUrlSource " + src);
   }
 
+  function reloadPage()
+  {
+    location.reload();
+  }
+  
+  var loadingState = "None";
+  function updateLoadingState(state)
+  {
+    loadingState = state;
+  }
+  
+  function onLoadingToMainMenuComplete(isCG)
+  {
+    hideLoadingBanner();
 
+    if(isCG && !cgEnvDisabled)
+    {
+      window.CrazyGames.SDK.game.sdkGameLoadingStop();
+    }
+  }
 
+function isIFramed()
+{
+  try
+  {
+    // Check if the current window is not the top-level window
+    if (window.self !== window.top)
+    {
+      return true;
+    }
+  }
+  catch (e)
+  {
+    // If a cross-origin error occurs, assume the content is iframed
+    return true;
+  }
 
+  // Default case: Not iframed
+  return false;
+}
