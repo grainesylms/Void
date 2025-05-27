@@ -6,7 +6,7 @@ function loadGames(txtPath, folderPath) {
         .trim()
         .split("\n")
         .map((game) => game.trim());
-      const section = document.getElementById("games-section");
+      const section = document.getElementById("gsection");
 
       games.forEach((gamePath) => {
         const gameName = gamePath
@@ -26,7 +26,7 @@ function loadGames(txtPath, folderPath) {
       });
     })
     .catch((error) => {
-      console.error(`Error loading games from ${txtPath}:`, error);
+      console.error(`Error loading from ${txtPath}:`, error);
     });
 }
 

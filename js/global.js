@@ -13,13 +13,13 @@ window.onload = function () {
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("gameSearch");
-    const gamesSection = document.getElementById("games-section");
+    const searchInput = document.getElementById("gSearch");
+    const gSection = document.getElementById("gsection");
     const noResultsMessage = document.getElementById("noResultsMessage");
 
     // Search logic
     const handleSearch = () => {
-      const folderElements = gamesSection.querySelectorAll(".widget");
+      const folderElements = gSection.querySelectorAll(".widget");
       const searchTerm = searchInput.value.toLowerCase().trim();
       let visibleCount = 0;
 
@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
       noResultsMessage.style.display = (visibleCount === 0 && searchTerm !== "") ? "block" : "none";
     };
 
-    // Observe dynamic game buttons
+    // Observe dynamic buttons
     const observer = new MutationObserver(handleSearch);
     observer.observe(gamesSection, { childList: true, subtree: true });
 
